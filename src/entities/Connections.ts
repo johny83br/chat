@@ -21,10 +21,7 @@ class Connection {
   admin_id: string;
 
   @Column()
-  username: string;
-
-  @Column()
-  chat: boolean;
+  user_id: string;
 
   @UpdateDateColumn()
   updated_at: Date;
@@ -33,7 +30,7 @@ class Connection {
   created_at: Date;
 
   @OneToOne(() => User)
-  @JoinColumn()
+  @JoinColumn({ name: "user_id" })
   user: User;
 
   constructor() {

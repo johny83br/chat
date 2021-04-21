@@ -7,29 +7,39 @@ export class CreateMessages1618941375293 implements MigrationInterface {
         new Table({
             name: "messages",
             columns: [
-            {
-                name: "id",
-                type: "uuid",
-                isPrimary: true,
-            },
-            {
-                name: "admin_id",
-                type: "uuid",
-            },
-            {
-                name: "user_id",
-                type: "uuid",
-            },
-            {
-                name: "text",
-                type: "varchar"
-            },
-            {
-                name: "created_at",
-                type: "timestamp",
-                default: "now()",
-            },
+                {
+                    name: "id",
+                    type: "uuid",
+                    isPrimary: true,
+                },
+                {
+                    name: "admin_id",
+                    type: "uuid",
+                },
+                {
+                    name: "user_id",
+                    type: "uuid",
+                },
+                {
+                    name: "text",
+                    type: "varchar"
+                },
+                {
+                    name: "created_at",
+                    type: "timestamp",
+                    default: "now()",
+                },
             ],
+            foreignKeys: [
+                {
+                    name: "FKUser",
+                    referencedTableName: "users",
+                    referencedColumnNames: ["id"],
+                    columnNames: ["user_id"],
+                    onDelete: "SET NULL",
+                    onUpdate: "SET NULL"
+                }
+            ]
         })
         );
 

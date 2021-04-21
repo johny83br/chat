@@ -3,7 +3,7 @@ import {
   Column,
   CreateDateColumn,
   PrimaryColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn
 } from "typeorm";
 
@@ -20,13 +20,16 @@ class Message {
   admin_id: string;
 
   @Column()
+  user_id: string;
+
+  @Column()
   text: string;
 
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToOne(() => User)
-  @JoinColumn()
+  @ManyToOne(() => User)
+  @JoinColumn({ name: "user_id" })
   user: User;
 
   constructor() {

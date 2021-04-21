@@ -17,11 +17,10 @@ routes.use( bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 
 routes.post("/settings", settingsController.create);
-
 routes.post("/users/add", usersController.create);
-
 routes.post("/connections/add", connectionsController.create);
 
 routes.post("/messages/add", messagesController.create);
+routes.get("/messages/:id", messagesController.showByUser);
 
 export { routes };

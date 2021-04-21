@@ -1,22 +1,16 @@
 import { Request, Response } from "express";
-import { getCustomRepository } from "typeorm";
-import { ConnectionsRepository } from "../repositories/ConnectionsRepository";
+import { ConnectionsService } from "../services/ConnectionsService";
 
 class ConnectionsController {
 
   async create( request: Request, response: Response ) {
-    const { admin_id, user } = request.body;
+    const { admin_id } = request.body;
 
-    const connectionsRepository = getCustomRepository(ConnectionsRepository);
-  
-    const connections = connectionsRepository.create({
-      admin_id,
-      user
-    })
-  
-    await connectionsRepository.save(connections);
-  
+    const connectionsService = new ConnectionsService();
+
+    const connections = await connectionsService.create({admin_id});
     return response.json(connections);
+
   }
 
 }
