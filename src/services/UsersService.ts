@@ -30,6 +30,22 @@ class UsersService {
 
   }
 
+  async findByUser(id: string) {
+    
+    const userExists = this.usersRepository.findOne({
+      id
+    });
+
+    if (!userExists) {
+      throw new Error("User not exists!");
+    }
+
+    return userExists;
+
+  }
+
+  
+
 }
 
 export { UsersService };

@@ -13,6 +13,21 @@ class UsersController {
   
   }
 
+  async showUser(request: Request, response: Response): Promise<Response> {
+
+    const { id } = request.params;
+
+    const usersService = new UsersService();
+
+    try {
+      const user = await usersService.findByUser(id);
+      return response.json(user);
+    } catch ( error ) {
+      response.json({message: error.message});
+    }
+
+  }
+
 }
 
 export { UsersController }
