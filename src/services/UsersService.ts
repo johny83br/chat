@@ -30,10 +30,24 @@ class UsersService {
 
   }
 
-  async findByUser(id: string) {
+  async findById(id: string) {
     
     const userExists = this.usersRepository.findOne({
       id
+    });
+
+    if (!userExists) {
+      throw new Error("User not exists!");
+    }
+
+    return userExists;
+
+  }
+
+  async findByEmail(email: string) {
+    
+    const userExists = this.usersRepository.findOne({
+      email
     });
 
     if (!userExists) {

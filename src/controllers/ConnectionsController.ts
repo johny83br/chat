@@ -4,11 +4,21 @@ import { ConnectionsService } from "../services/ConnectionsService";
 class ConnectionsController {
 
   async create( request: Request, response: Response ) {
-    const { admin_id } = request.body;
+    const {
+      socket_id,
+      user_id,
+      admin_id,
+      id
+    } = request.body;
 
     const connectionsService = new ConnectionsService();
 
-    const connections = await connectionsService.create({admin_id});
+    const connections = await connectionsService.create({
+      socket_id,
+      user_id,
+      admin_id,
+      id
+    });
     return response.json(connections);
 
   }

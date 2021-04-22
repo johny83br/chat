@@ -21,6 +21,10 @@ export class CreateConnections1618935400621 implements MigrationInterface {
             type: "uuid",
           },
           {
+            name: "socket_id",
+            type: "varchar",
+          },
+          {
             name: "updated_at",
             type: "timestamp",
             default: "now()",

@@ -3,7 +3,10 @@ import { ConnectionsRepository } from "../repositories/ConnectionsRepository";
 import { Connection } from "../entities/Connections";
 
 interface IConnectionsCreate {
-  admin_id: string;
+  socket_id: string;
+  user_id: string;
+  admin_id?: string;
+  id?: string;
 }
 
 class ConnectionsService {
@@ -14,15 +17,28 @@ class ConnectionsService {
     this.connectionsRepository = getCustomRepository(ConnectionsRepository);
   }
 
-  async create( { admin_id }: IConnectionsCreate ) {
+  async create( { socket_id, user_id, admin_id, id }: IConnectionsCreate ) {
 
-    const settings = this.connectionsRepository.create({
-      admin_id
+    const connections = this.connectionsRepository.create({
+      socket_id,
+      user_id,
+      admin_id,
+      id
     })
   
-    await this.connectionsRepository.save(settings);
+    await this.connectionsRepository.save(connections);
 
-    return settings;
+    return connections;
+
+  }
+
+  async findByUserId( user_id : string ) {
+
+    const connection = await this.connectionsRepository.findOne({
+      user_id
+    });
+
+    return connection;
 
   }
 

@@ -4,7 +4,7 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryColumn,
-  OneToOne,
+  ManyToOne,
   JoinColumn
 } from "typeorm";
 
@@ -23,13 +23,16 @@ class Connection {
   @Column()
   user_id: string;
 
+  @Column()
+  socket_id: string;
+
   @UpdateDateColumn()
   updated_at: Date;
 
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToOne(() => User)
+  @ManyToOne(() => User)
   @JoinColumn({ name: "user_id" })
   user: User;
 

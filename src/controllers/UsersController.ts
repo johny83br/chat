@@ -20,7 +20,7 @@ class UsersController {
     const usersService = new UsersService();
 
     try {
-      const user = await usersService.findByUser(id);
+      const user = await usersService.findById(id);
       return response.json(user);
     } catch ( error ) {
       response.json({message: error.message});

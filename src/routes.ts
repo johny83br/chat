@@ -16,8 +16,11 @@ routes.use( bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
 
-routes.post("/settings", settingsController.create);
 routes.post("/connections/add", connectionsController.create);
+
+routes.post("/settings", settingsController.create);
+routes.get("/settings/:username", settingsController.findByUsername);
+routes.put("/settings/:username", settingsController.update);
 
 routes.post("/users/add", usersController.create);
 routes.get("/users/:id", usersController.showUser);
