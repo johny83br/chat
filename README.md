@@ -13,7 +13,7 @@
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/johny83br/nlw5-nodejs">
   </a>
 
-  <img src="https://img.shields.io/static/v1?label=Blog&message=Rocketseat&color=7159c1&style=for-the-badge&logo=ghost"/>
+  <img src="https://img.shields.io/static/v1?label=Blog&message=Rocketseat&color=7159c1&style=for-the-badge"/>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 
