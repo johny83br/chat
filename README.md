@@ -23,13 +23,13 @@
 
 Projeto de chat via WebSocket realizado durante o NLW5 da <a href="https://rocketseat.com.br/">Rocketseat</a>. Em que o cliente abre um chamado com o atendente, e espera que o atendente o responda.
 
-### Pré-requisitos
+## Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### Rodando o Back End (servidor)
+## Rodando o Back End (servidor)
 
 ```bash
 # Clone este repositório
@@ -47,7 +47,7 @@ $ yarn dev
 # O servidor inciará na porta:3333 - acesse <http://localhost:3333>
 ```
 
-### Tecnologias
+## Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
