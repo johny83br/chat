@@ -16,17 +16,17 @@ class MessagesService {
     this.messagesRepository = getCustomRepository(MessagesRepository);
   }
 
-  async create( { user_id, text, admin_id }: IMessagesCreate ) {
+  async create( { admin_id, text, user_id }: IMessagesCreate ) {
 
-    const messages = this.messagesRepository.create({
+    const message = this.messagesRepository.create({
       admin_id,
-      user_id,
-      text
+      text,
+      user_id
     })
   
-    await this.messagesRepository.save(messages);
+    await this.messagesRepository.save(message);
 
-    return messages;
+    return message;
 
   }
 
