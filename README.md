@@ -31,7 +31,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/johny83br/nlw5-nodejs>
+$ git clone https://github.com/johny83br/nlw5-nodejs
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd nlw5-nodejs
